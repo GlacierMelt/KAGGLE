@@ -1,6 +1,7 @@
 # Cat vs Dog
 ## creat submission.csv
-python'''import pandas as pd
+'''python
+import pandas as pd
 import os
 submission_df = pd.DataFrame.from_dict({'id': os.listdir(f'./data/test'),
                                         'label': test_pred})
