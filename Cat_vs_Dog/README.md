@@ -1,6 +1,6 @@
 # Cat vs Dog
 ## creat submission.csv
-'''python
+```python
 import pandas as pd
 import os
 submission_df = pd.DataFrame.from_dict({'id': os.listdir(f'./data/test'),
@@ -11,4 +11,5 @@ submission_df['id'] = submission_df['id'].astype(int)
 submission_df = submission_df.sort_values('id')
 
 submission_df.to_csv('submission.csv', index = False)
-submission_df.head()'''
+submission_df.head()
+```
