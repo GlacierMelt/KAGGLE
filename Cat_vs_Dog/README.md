@@ -1,6 +1,6 @@
 # Cat vs Dog
 
-## Creat submission.csv
+## Create submission.csv
 ```python
 import pandas as pd
 import os
