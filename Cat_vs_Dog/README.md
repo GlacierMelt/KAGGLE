@@ -14,3 +14,5 @@ submission_df = submission_df.sort_values('id')
 submission_df.to_csv('submission.csv', index = False)
 submission_df.head()
 ```
+## Dataset
+[Dogs vs. Cats Redux: Kernels Edition](https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/data)
