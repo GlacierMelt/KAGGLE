@@ -20,5 +20,5 @@ submission_df.head()
 ## Score
 | model | test loss | score |
 |---|---|---|
-| EfficieNet-B3 | 0.0163 | 0.03763 |
+| EfficientNet-B3 | 0.0163 | 0.03763 |
 
