@@ -18,6 +18,8 @@ submission_df.head()
 [Dogs vs. Cats Redux: Kernels Edition](https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/data)
 
 ## Score
+```
 | model | test loss | score |
 |---|---|---|
 | EfficieNet-B3 | 0.0163 | 0.03763 |
+```
