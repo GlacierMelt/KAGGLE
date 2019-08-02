@@ -13,7 +13,7 @@ print("CORES: %d" % multiprocessing.cpu_count())
 * [2015 Blindness Detection](https://www.kaggle.com/tanlikesmath/diabetic-retinopathy-resized)
 * [Diabetic Retinopathy: Segmentation and Grading Challenge](https://ieee-dataport.org/open-access/indian-diabetic-retinopathy-image-dataset-idrid)
 
-**Data Preprocessing**
+### Data Preprocessing
 ##### 1.Downlod dataset
 ```PYTHON
 !apt-get -y update && apt-get install -y zip
