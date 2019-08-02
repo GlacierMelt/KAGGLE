@@ -14,7 +14,7 @@ print("CORES: %d" % multiprocessing.cpu_count())
 * [Diabetic Retinopathy: Segmentation and Grading Challenge](https://ieee-dataport.org/open-access/indian-diabetic-retinopathy-image-dataset-idrid)
 
 ### Data Preprocessing
-#### 1.Downlod dataset
+#### 1. Download Dataset
 ```PYTHON
 !apt-get -y update && apt-get install -y zip
 !apt-get -y update && apt-get install -y wget
