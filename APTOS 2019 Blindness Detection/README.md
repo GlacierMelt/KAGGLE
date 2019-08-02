@@ -12,3 +12,4 @@ print("CORES: %d" % multiprocessing.cpu_count())
 * [APTOS 2019 Blindness Detection](https://www.kaggle.com/c/aptos2019-blindness-detection/data)
 * [2015 Blindness Detection](https://www.kaggle.com/tanlikesmath/diabetic-retinopathy-resized)
 * [Diabetic Retinopathy: Segmentation and Grading Challenge](https://ieee-dataport.org/open-access/indian-diabetic-retinopathy-image-dataset-idrid)
+**Data Preprocessing**
