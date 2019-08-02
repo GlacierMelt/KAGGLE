@@ -15,7 +15,6 @@ print("CORES: %d" % multiprocessing.cpu_count())
 
 **Data Preprocessing**
 ##### 1.Downlod dataset
----
 ```PYTHON
 !apt-get -y update && apt-get install -y zip
 !apt-get -y update && apt-get install -y wget
