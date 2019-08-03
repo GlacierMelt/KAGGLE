@@ -26,4 +26,10 @@ print("CORES: %d" % multiprocessing.cpu_count())
 import imagehash
 from keras.preprocessing.image import load_img
 from multiprocessing import Pool
+
+def create_hash(x):
+    path = './Data Preprocessing/train_images/' + x + '.png'
+    image = load_img(path) # PIL
+    image_hash = str(imagehash.whash(image))
+    return image_hash
 ```
