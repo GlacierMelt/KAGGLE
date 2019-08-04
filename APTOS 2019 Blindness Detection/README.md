@@ -32,4 +32,18 @@ def create_hash(x):
     image = load_img(path) # PIL
     image_hash = str(imagehash.whash(image))
     return image_hash
+
+def select_discard(df_train):
+    data = df_train.copy()
+    train_input1 = df_train[['img_hash']]
+    train_input1 = train_input1[['img_hash']]
+    train_input1['New']=1
+    train_input2 = train_input1.groupby('img_hash').count().reset_index()
+    train_input2 = train_input2[train_input2['New']>1]
+    for idx in range(train_input2.shape[0]):
+        df = df_train[df_train['img_hash']==train_input2.iloc[idx,0]]
+        for i in range(5):
+            if df[df['diagnosis']==i].shape[0] == 1:
+                data.drop(df[df['diagnosis']==i].index, inplace=True)
+    return data
 ```
