@@ -36,7 +36,6 @@ def create_hash(x):
 def select_discard(df_train):
     data = df_train.copy()
     train_input1 = df_train[['img_hash']]
-    train_input1 = train_input1[['img_hash']]
     train_input1['New']=1
     train_input2 = train_input1.groupby('img_hash').count().reset_index()
     train_input2 = train_input2[train_input2['New']>1]
