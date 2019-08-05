@@ -46,3 +46,10 @@ def select_discard(df_train):
                 data.drop(df[df['diagnosis']==i].index, inplace=True)
     return data
 ```
+#### 3. Ben&Crop Preprocessing
+```python
+import os
+folder_name = 'Preprocess_image'
+if not os.path.exists(folder_name):
+    os.makedirs(folder_name)
+ ```
