@@ -77,4 +77,4 @@ def Ben_Preprocessing(image):
         cv2.imwrite(os.path.join(new_image_dir, data.iloc[idx, 0]+ '.png'), image)
     print('Number of images: ', len(os.listdir(new_image_dir)))
  ```
-#### Train Split Test
+#### 4. Train Split Test
