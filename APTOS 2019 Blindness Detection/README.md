@@ -52,4 +52,16 @@ import os
 folder_name = 'Preprocess_image'
 if not os.path.exists(folder_name):
     os.makedirs(folder_name)
+
+def Ben_Preprocessing(image):
+    lower = np.array([7,7,7]) 
+    upper = np.array([255,255,255])
+    mask = cv2.inRange(image, lower, upper)
+    img_R = image[:,:,0][np.ix_(mask.any(1), mask.any(0))]
+    img_G = image[:,:,1][np.ix_(mask.any(1), mask.any(0))]
+    img_B = image[:,:,2][np.ix_(mask.any(1), mask.any(0))]
+    image = np.stack([img_R, img_G, img_B], axis=-1)
+    image = cv2.resize(image, (512,512))
+    image = cv2.addWeighted(image, 4, cv2.GaussianBlur(image, (0,0), 30) ,-4 ,128)
+    return image
  ```
