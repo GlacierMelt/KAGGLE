@@ -64,4 +64,16 @@ def Ben_Preprocessing(image):
     image = cv2.resize(image, (512,512))
     image = cv2.addWeighted(image, 4, cv2.GaussianBlur(image, (0,0), 30) ,-4 ,128)
     return image
+    
+ def Ben_Crop_Saver(csv_file, image_dir, new_image_dir, image_type):
+    data = pd.read_csv(csv_file)
+    for idx in range(len(data)):
+        img_name = os.path.join(image_dir, data.iloc[idx, 0] + image_type)
+        image = cv2.cvtColor(cv2.imread(img_name), cv2.COLOR_BGR2RGB)
+        image = Ben_Preprocessing(image)
+        image = cv2.resize(image, (224,224))
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        # print(os.path.join(image_dir,img_name))
+        cv2.imwrite(os.path.join(new_image_dir, data.iloc[idx, 0]+ '.png'), image)
+    print('Number of images: ', len(os.listdir(new_image_dir)))
  ```
