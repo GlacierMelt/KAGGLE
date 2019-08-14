@@ -78,3 +78,8 @@ def Ben_Preprocessing(image):
     print('Number of images: ', len(os.listdir(new_image_dir)))
  ```
 #### 4. Train Split Test
+```python
+from sklearn.model_selection import train_test_split
+train_data = pd.read_csv('./Data Preprocessing/train.csv')
+train_df, val_df = train_test_split(train_data, test_size=0.05, random_state=46, stratify=train_data.diagnosis)
+```
