@@ -84,3 +84,8 @@ train_data = pd.read_csv('./Data Preprocessing/train.csv')
 train_df, val_df = train_test_split(train_data, test_size=0.05, random_state=46, stratify=train_data.diagnosis)
 ```
 #### ADVERSARIAL EXAMPLE GENERATION
+def fgsm_attack(image, epsilon, data_grad):
+    sign_data_grad = data_grad.sign()
+    perturbed_image = image + epsilon*sign_data_grad
+    perturbed_image = torch.clamp(perturbed_image, 0, 1)
+    return perturbed_image
