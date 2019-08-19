@@ -92,3 +92,5 @@ def fgsm_attack(image, epsilon, data_grad):
     return perturbed_image
 ```
 ![image](https://github.com/GlacierMelt/KAGGLE/blob/master/APTOS%202019%20Blindness%20Detection/image/adversarial_image.PNG)
+
+### Training
