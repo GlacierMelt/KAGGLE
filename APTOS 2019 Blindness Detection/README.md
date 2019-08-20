@@ -98,6 +98,21 @@ def fgsm_attack(image, epsilon, data_grad):
 ### Submission
 ---
 ```python
+start = time.time()
+model.cuda().eval()
+prediction_R = np.zeros((num_image, 1))
+with torch.no_grad():
+    for _ in tqdm(range(TTA), desc='Inferencing'):
+        prefetcher = data_prefetcher(test_loader, 'test')
+        for i in range(len(test_loader)):
+            images = prefetcher.next()
+            outputs = model(images)
+            predicted = outputs.detach().cpu().numpy().squeeze().reshape(-1, 1)
+            prediction_R[i * batch_size:( i + 1) * batch_size] += predicted
+prediction_R = prediction_R / TTA
+prediction_R = prediction(prediction_R).astype(int)
+print(emoji.emojize("Time: %.5fmin 🍹" % ((time.time()-start)/60.0)))
+
 submission_df = pd.read_csv("../input/aptos2019-blindness-detection/sample_submission.csv")
 submission_df['diagnosis'] = prediction_R
 submission_df.to_csv('submission.csv', index = False)
