@@ -97,7 +97,7 @@ def fgsm_attack(image, epsilon, data_grad):
 ---
 ### Submission
 ---
-#### TTA
+#### 1. TTA
 ```python
 start = time.time()
 model.cuda().eval()
@@ -114,7 +114,7 @@ prediction_R = prediction_R / TTA
 prediction_R = prediction(prediction_R).astype(int)
 print(emoji.emojize("Time: %.5fmin 🍹" % ((time.time()-start)/60.0)))
 ```
-#### ADD CSV
+#### 2. ADD CSV
 ```python
 submission_df = pd.read_csv("../input/aptos2019-blindness-detection/sample_submission.csv")
 submission_df['diagnosis'] = prediction_R
