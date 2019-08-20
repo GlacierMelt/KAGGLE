@@ -96,3 +96,10 @@ def fgsm_attack(image, epsilon, data_grad):
 ### Training
 ---
 ### Submission
+---
+```python
+submission_df = pd.read_csv("../input/aptos2019-blindness-detection/sample_submission.csv")
+submission_df['diagnosis'] = prediction_R
+submission_df.to_csv('submission.csv', index = False)
+submission_df.head(10)
+```
